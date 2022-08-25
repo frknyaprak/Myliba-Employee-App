@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { TranslateService } from '@ngx-translate/core';
 import { NotifierService } from 'angular-notifier';
 import { Observable } from 'rxjs/internal/Observable';
 import { EmployeeService } from 'src/app/services/employee.service';
@@ -11,12 +12,16 @@ import { EmployeeService } from 'src/app/services/employee.service';
 })
 export class ListEmployeeComponent implements OnInit {
   employees: any[] = [];
-  
+  deleteMessage:any;
 
   constructor(
     private employeeService: EmployeeService,
-    public notifierService: NotifierService
-  ) { 
+    public notifierService: NotifierService,
+    private translateService:TranslateService
+  ) {
+    this.translateService.get('deleteMessage').subscribe((data)=> {
+      this.deleteMessage= data;
+   })
   }
 
   ngOnInit(): void {
@@ -37,7 +42,7 @@ export class ListEmployeeComponent implements OnInit {
 
   deleteEmployee(id: string) {
     this.employeeService.deleteEmployee(id).then(()=> {
-      this.notifierService.notify('success','Employee deleted successfully!')
+      this.notifierService.notify('success',this.deleteMessage)
     }).catch(error => {
     })
   }

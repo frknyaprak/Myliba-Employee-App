@@ -18,7 +18,9 @@ export class CreateEmployeeComponent implements OnInit {
   id: string | null;
   header : string;
   addButton: string;
-  message:any;
+  updateMessage:any;
+  successMessage:any;
+  warningMessage:any;
 
   constructor(
     private fb: FormBuilder,
@@ -37,9 +39,15 @@ export class CreateEmployeeComponent implements OnInit {
       salary: ['', Validators.required]
     })
     this.id = this.aRoute.snapshot.paramMap.get('id');
-    this.translateService.get('successMessage').subscribe((data)=> {
-       this.message= data;
+    this.translateService.get('updateMessage').subscribe((data)=> {
+       this.updateMessage= data;
     })
+    this.translateService.get('successMessage').subscribe((data)=> {
+      this.successMessage= data;
+   })
+   this.translateService.get('warningMessage').subscribe((data)=> {
+    this.warningMessage= data;
+ })
   }
 
   ngOnInit(): void {
@@ -56,7 +64,7 @@ export class CreateEmployeeComponent implements OnInit {
        !this.createEmployee.get('email')?.valid ||
        !this.createEmployee.get('salary')?.valid
        ){
-      this.notifierService.notify('warning', 'Please fill in all the required fields!');
+      this.notifierService.notify('warning', this.warningMessage);
     }else {
       if(this.id === null) {
         this.addEmployee();
@@ -81,7 +89,7 @@ export class CreateEmployeeComponent implements OnInit {
     this.loading = true;
 
     this.employeeService.addEmployee(employee).then(()=> {
-      this.notifierService.notify('success','Employee added successfully');
+      this.notifierService.notify('success',this.successMessage);
       this.loading=false;
       this.router.navigate(['/list-employee']);
     }).catch(error => {
@@ -101,7 +109,7 @@ export class CreateEmployeeComponent implements OnInit {
     this.employeeService.updateEmployee(id, employee).then(()=> {
       this.loading = false;
       
-      this.notifierService.notify('success', this.message);
+      this.notifierService.notify('success', this.updateMessage);
       this.router.navigate(['/list-employee']);
     })
   }

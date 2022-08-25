@@ -8,14 +8,4 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent {
   title = 'Myliba-Case-Study';
-
-  // supportLanguages = ['en', 'tr'];
-
-  // constructor(private translateService: TranslateService) {
-  //   this.translateService.addLangs(this.supportLanguages);
-  //   this.translateService.setDefaultLang('en');
-
-  //    const browserLang = this.translateService.getBrowserLang();
-  //    this.translateService.use(browserLang as any);
-  // }
 }
