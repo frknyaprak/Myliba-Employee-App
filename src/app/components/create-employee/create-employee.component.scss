@@ -1,0 +1,18 @@
+.spinner {
+    float: right;
+}
+.errorArea {
+    display: flex;
+    .error {
+        font-size: 0.7rem;
+        color: red;
+        margin-top: .5rem;
+        margin-left: .5rem;
+
+    }
+}
+
+
+.cancelButton{
+    margin-right: 1rem;
+}

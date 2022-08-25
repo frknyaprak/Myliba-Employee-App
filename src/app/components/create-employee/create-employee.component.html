@@ -1,0 +1,43 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>{{"title2" | translate}}
+                        <div *ngIf="loading" class="spinner-border spinner" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                          </div>
+                    </h3>
+                    <form class="mt-4" [formGroup]="createEmployee" (ngSubmit)="addAndEditEmployee()">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control form-control" placeholder="{{'name' | translate}}" formControlName="name">
+                                <div class="errorArea" *ngIf="name?.invalid && name?.touched">
+                                    <small class="error">
+                                        {{'nameValidation' | translate}}.</small>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control" placeholder="{{'surname' | translate}}" formControlName="surname">
+                                <div class="errorArea" *ngIf="surname?.invalid && surname?.touched">
+                                    <small class="error">{{'surnameValidation' | translate}}</small>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="email" class="form-control form-control mt-3" placeholder="{{'emailPlaceholder' | translate}}" formControlName="email" >
+                        <div class="errorArea" *ngIf="email?.invalid && email?.touched">
+                            <small class="error">{{'emailValidation' | translate}}</small>
+                        </div>
+                        
+                        <input type="number" class="form-control form-control mt-3" placeholder="{{'salary' | translate}}" formControlName="salary">
+                        <div class="mt-3">
+                            <button type="button" class="btn btn-danger btn-lg cancelButton" routerLink="/list-employee">{{'cancel' | translate}}</button>
+                            <button *ngIf="!id" class="btn btn-primary btn-lg">{{ 'addButton' | translate }}</button>
+                            <button *ngIf="id" class="btn btn-primary btn-lg">{{'update' | translate}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

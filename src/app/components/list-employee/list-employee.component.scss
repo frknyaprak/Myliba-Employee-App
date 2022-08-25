@@ -1,0 +1,32 @@
+  :host {
+      .addButton {
+          float: right;
+      }
+      .userNotFound {
+          margin-top: 2rem;
+          color: darkgray;
+          font-size:medium;
+      }
+
+      i {
+          cursor: pointer;
+      }
+      .additionalButtons {
+          .editButton {
+              margin-right:2rem ;
+          }
+          @media (max-width: 575px) {
+              display: block;
+              .editButton {
+                  @media (max-width: 575px) {
+                      margin-right: 1rem;
+                  }
+              }
+          }
+      }
+  }
+
+
+
+
+

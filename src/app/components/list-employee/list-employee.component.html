@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">{{"subheader" | translate}}</span>
+            <button class="btn btn-primary btn-lg addButton" routerLink="/create-employee">{{"addButton" | translate}}</button>
+            <h5 class="userNotFound" *ngIf="employees.length == 0">No registered users found...</h5>
+            <div class="table-responsive w-100">
+            <table *ngIf="employees.length > 0" class="table table-striped mt-5">
+                <thead>
+                  <tr >
+                    <th scope="col">{{"name" | translate}}</th>
+                    <th scope="col">{{"surname" | translate}}</th>
+                    <th scope="col">{{"email" | translate}}</th>
+                    <th scope="col">{{"salary" | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let employee of employees" >
+                    <td >{{employee.name}}</td>
+                    <td >{{employee.surname}}</td>
+                    <td >{{employee.email}}</td>
+                    <td >{{employee.salary | currency}}</td>
+                    <td class="additionalButtons">
+                      <i class="fas fa-edit fa-lg text-info editButton" [routerLink]="['/edit-employee/', employee.id]"></i>
+                      <i (click)="deleteEmployee(employee.id)" class="fas fa-trash-alt fa-lg text-danger" ></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+    </div>
+</div>

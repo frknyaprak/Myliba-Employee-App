@@ -1,0 +1,17 @@
+{
+    "title":"Çalışan Yönetim Ekranı",
+    "subheader":"Çalışan Listesi",
+    "name":"Adı",
+    "surname":"Soyadı",
+    "email":"E-posta",
+    "salary":"Maaş",
+    "addButton":"Ekle",
+    "title2":"Çalışan Ekleme Ekranı",
+    "cancel":"Vazgeç",
+    "update":"Güncelle",
+    "emailPlaceholder":"test@email.com",
+    "nameValidation":"Geçersiz kullanıcı adı. Kullanıcı adları bir harfle başlamalıdır. İzin verilen karakterler a-z (yalnızca küçük harf), 0-9, _, - (tire) ve .(nokta).",
+    "surnameValidation":"Lütfen Soyadınızı girdiğinizden emin olunuz",
+    "emailValidation":"Geçerli bir e-posta adresi giriniz",
+    "successMessage":"çALIŞAN EKLENDİ"
+}

@@ -1,0 +1,17 @@
+{
+    "title":"Employee Management Screen",
+    "subheader":"Employee List",
+    "name":"Name",
+    "surname":"Surname",
+    "email":"Email",
+    "salary":"Salary",
+    "addButton":"Add",
+    "title2":"Add Employee",
+    "cancel":"Cancel",
+    "update":"Update",
+    "emailPlaceholder":"example@email.com",
+    "nameValidation":"Invalid username. Usernames must start with a letter. Allowed characters are a-z (only lower case), 0-9, _, - (dash), and .(dot).",
+    "surnameValidation":"Please ensure that you have entered your Surname",
+    "emailValidation":"Please enter a valid email address.",
+    "successMessage":"Employee updated successfullyasdasdasd"
+}

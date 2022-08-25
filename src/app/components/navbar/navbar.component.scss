@@ -1,0 +1,25 @@
+span {
+    cursor: pointer;
+}
+.rightSection {
+    display: flex;
+    .langAtt {
+        color: white;
+        font-size: 0.7rem;
+        margin-bottom: unset;
+        margin-top: 0.3rem;
+        margin-right: 0.3rem;
+    }
+    
+    .formSelect {
+        width: 4rem;
+        border-radius: 6px;
+        padding: 6px 10px;
+        background-color: #212529;
+        color: white;
+        border-width: 1px;
+        @media (max-width: 400px) {
+            width: 3rem;
+          }
+    }
+}

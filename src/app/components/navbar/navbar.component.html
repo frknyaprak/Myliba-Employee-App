@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1" [routerLink]="['']">{{'title' | translate}}</span>
+      <div class="rightSection">
+        <!-- <div class="langAtt">Choose Language</div> -->
+        <select class="formSelect"(click)="selectLanguage($any($event.target).value)" aria-label="Default select example">
+          <option *ngFor="let item of supportLanguages">{{item}}</option>
+        </select>
+      </div>
+      
+    </div>
+  </nav>
